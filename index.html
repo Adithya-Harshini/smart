@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShikshaSetu - Login/Register</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-container">
+  <img src="assets/logo.png" alt="ShikshaSetu Logo" class="logo">
+  
+  <div class="tabs">
+    <button id="loginTab">Login</button>
+    <button id="registerTab">Register</button>
+  </div>
+
+  <div id="loginForm">
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+  </div>
+
+  <div id="registerForm" style="display:none;">
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <select id="studyType">
+      <option value="">Select Study Type</option>
+      <option value="School">School</option>
+      <option value="College">College</option>
+    </select>
+    <select id="class">
+      <option value="">Select Class/Year</option>
+      <option value="10">10</option>
+      <option value="12">12</option>
+      <option value="UG">UG</option>
+      <option value="PG">PG</option>
+    </select>
+    <select id="gender">
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+    <select id="lang">
+      <option value="en-US">English</option>
+      <option value="hi-IN">Hindi</option>
+      <option value="te-IN">Telugu</option>
+      <option value="ta-IN">Tamil</option>
+      <option value="kn-IN">Kannada</option>
+      <option value="mr-IN">Marathi</option>
+    </select>
+    <button onclick="registerUser()">Register</button>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+document.getElementById("loginTab").addEventListener("click", () => {
+  document.getElementById("loginForm").style.display = "block";
+  document.getElementById("registerForm").style.display = "none";
+});
+document.getElementById("registerTab").addEventListener("click", () => {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("registerForm").style.display = "block";
+});
+</script>
+</body>
+</html>

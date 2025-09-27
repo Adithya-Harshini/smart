@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - ShikshaSetu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="profile-container">
+  <h2>Profile</h2>
+  <div id="profileDetails"></div>
+
+  <!-- Language Dropdown -->
+  <label>Language: </label>
+  <select id="profileLang">
+    <option value="en-US">English</option>
+    <option value="hi-IN">Hindi</option>
+    <option value="te-IN">Telugu</option>
+    <option value="ta-IN">Tamil</option>
+    <option value="kn-IN">Kannada</option>
+    <option value="mr-IN">Marathi</option>
+  </select>
+
+  <!-- Download PDF -->
+  <button onclick="downloadProfilePDF()">Download Profile as PDF</button>
+
+  <!-- TTS/STT -->
+  <button onclick="readProfileText()">🔊 Read Profile</button>
+  <button onclick="startProfileVoiceInput()">🎤 Speak</button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/html2pdf.bundle.min.js"></script>
+<script>
+function downloadProfilePDF() {
+  const element = document.querySelector('.profile-container');
+  html2pdf().from(element).save('Profile.pdf');
+}
+
+function readProfileText() {
+  const text = document.getElementById('profileDetails').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utter);
+}
+
+function startProfileVoiceInput() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = document.getElementById('profileLang').value;
+  recognition.start();
+  recognition.onresult = function(event) {
+    alert('You said: ' + event.results[0][0].transcript);
+  };
+}
+
+// Load user profile
+window.onload = function() {
+  const user = JSON.parse(localStorage.getItem('currentUser'));
+  if(user) {
+    document.getElementById('profileDetails').innerHTML = `
+      <p><strong>Name:</strong> ${user.name}</p>
+      <p><strong>Email:</strong> ${user.email}</p>
+      <p><strong>Study Type:</strong> ${user.study}</p>
+      <p><strong>Class/Year:</strong> ${user.class}</p>
+      <p><strong>Gender:</strong> ${user.gender}</p>
+      <p><strong>Preferred Language:</strong> ${user.lang}</p>
+    `;
+  }
+};
+</script>
+</body>
+</html>

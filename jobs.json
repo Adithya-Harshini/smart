@@ -1,0 +1,17 @@
+[
+  {"title":"Software Developer","description":"Entry-level software developer position.","location":"District A","qualification":"B.Tech/BCA"},
+  {"title":"Teacher","description":"Math and Science teacher for high school.","location":"District B","qualification":"B.Ed"},
+  {"title":"Nurse","description":"Healthcare assistant for local clinic.","location":"District C","qualification":"B.Sc Nursing"},
+  {"title":"Clerk","description":"Office clerk at government office.","location":"District D","qualification":"12th Pass"},
+  {"title":"Lab Technician","description":"Support in science labs at schools.","location":"District E","qualification":"Diploma"},
+  {"title":"Counselor","description":"Career counselor for students.","location":"District F","qualification":"MA Psychology"},
+  {"title":"Driver","description":"School bus driver required.","location":"District G","qualification":"12th Pass, Driving License"},
+  {"title":"Farmer Assistant","description":"Support in agricultural projects.","location":"District H","qualification":"B.Sc Agriculture"},
+  {"title":"Library Assistant","description":"Manage library and books.","location":"District I","qualification":"Any Graduate"},
+  {"title":"Receptionist","description":"Front desk receptionist for college.","location":"District J","qualification":"12th Pass"},
+  {"title":"Data Entry Operator","description":"Input student data in system.","location":"District K","qualification":"12th Pass, Basic Computer"},
+  {"title":"Lab Instructor","description":"Guide students in science lab.","location":"District L","qualification":"B.Sc/B.Ed"},
+  {"title":"IT Support","description":"Support in college IT systems.","location":"District M","qualification":"BCA/B.Sc IT"},
+  {"title":"Marketing Assistant","description":"Promote college courses locally.","location":"District N","qualification":"Any Graduate"},
+  {"title":"Event Coordinator","description":"Organize events and workshops.","location":"District O","qualification":"Any Graduate"}
+]

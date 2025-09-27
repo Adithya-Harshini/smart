@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jobs - ShikshaSetu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="jobs-container">
+  <h2>Jobs</h2>
+  <input type="text" id="searchJob" placeholder="Search jobs...">
+
+  <!-- Progress Tracker -->
+  <div class="progress-tracker">
+    <progress id="jobsProgress" value="35" max="100"></progress>
+    <span id="jobsPercent">35%</span>
+    <button onclick="downloadJobsPDF()">Download Jobs PDF</button>
+  </div>
+
+  <!-- TTS/STT Buttons -->
+  <button onclick="readJobs()">🔊 Read Jobs</button>
+  <button onclick="startJobsVoiceInput()">🎤 Speak</button>
+
+  <div id="jobList"></div>
+</div>
+
+<script src="js/jobs.js"></script>
+<script src="js/html2pdf.bundle.min.js"></script>
+<script>
+function downloadJobsPDF() {
+  const element = document.querySelector('.jobs-container');
+  html2pdf().from(element).save('Jobs.pdf');
+}
+
+function readJobs() {
+  const text = document.getElementById('jobList').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utter);
+}
+
+function startJobsVoiceInput() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = 'en-US';
+  recognition.start();
+  recognition.onresult = function(event) {
+    alert('You said: ' + event.results[0][0].transcript);
+  };
+}
+</script>
+</body>
+</html>

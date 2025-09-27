@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzes - ShikshaSetu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="quiz-container">
+  <h2>Career Quiz</h2>
+  <div id="quizList"></div>
+  <button id="submitQuiz">Submit Quiz</button>
+  <div id="quizResult"></div>
+
+  <!-- Progress Tracker -->
+  <div class="progress-tracker">
+    <progress id="quizProgress" value="50" max="100"></progress>
+    <span id="quizPercent">50%</span>
+    <button onclick="downloadQuizPDF()">Download Quiz PDF</button>
+  </div>
+
+  <!-- TTS/STT -->
+  <button onclick="readQuiz()">🔊 Read Quiz</button>
+  <button onclick="startQuizVoiceInput()">🎤 Speak</button>
+</div>
+
+<script src="js/quiz.js"></script>
+<script src="js/html2pdf.bundle.min.js"></script>
+<script>
+function downloadQuizPDF() {
+  const element = document.querySelector('.quiz-container');
+  html2pdf().from(element).save('Quiz.pdf');
+}
+
+function readQuiz() {
+  const text = document.getElementById('quizList').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utter);
+}
+
+function startQuizVoiceInput() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = 'en-US';
+  recognition.start();
+  recognition.onresult = function(event) {
+    alert('You said: ' + event.results[0][0].transcript);
+  };
+}
+</script>
+</body>
+</html>

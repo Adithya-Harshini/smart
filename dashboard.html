@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - ShikshaSetu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+  <h3>ShikshaSetu</h3>
+  <ul>
+    <li><a href="profile.html">Profile </a></li>
+    <li><a href="updates.html">Updates </a></li>
+    <li><a href="news.html">News </a></li>
+    <li><a href="colleges.html">Colleges </a></li>
+    <li><a href="jobs.html">Jobs </a></li>
+    <li><a href="quizzes.html">Quizzes </a></li>
+    <li>
+      Language 
+      <select id="langSelect">
+        <option value="en-US">English</option>
+        <option value="hi-IN">Hindi</option>
+        <option value="te-IN">Telugu</option>
+        <option value="ta-IN">Tamil</option>
+        <option value="kn-IN">Kannada</option>
+        <option value="mr-IN">Marathi</option>
+      </select>
+    </li>
+    <li><a href="index.html">Logout </a></li>
+  </ul>
+</div>
+
+<div class="main-content">
+  <h2>Welcome, <span id="studentName"></span></h2>
+  
+  <div id="dashboardContent">
+    <p>Select a section from the sidebar to view content.</p>
+    
+    <!-- Progress Tracker -->
+    <div class="progress-tracker">
+      <h3>Progress Tracker</h3>
+      <progress id="progressBar" value="40" max="100"></progress>
+      <span id="progressPercent">40%</span>
+      <button onclick="downloadProgressPDF()">Download Progress as PDF</button>
+    </div>
+    
+    <!-- TTS & STT Buttons -->
+    <div class="tts-stt-buttons">
+      <button onclick="readDashboardText()">🔊 Read</button>
+      <button onclick="startVoiceInput()">🎤 Speak</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/html2pdf.bundle.min.js"></script>
+<script>
+function downloadProgressPDF() {
+  const element = document.querySelector('.progress-tracker');
+  html2pdf().from(element).save('Progress.pdf');
+}
+
+function readDashboardText() {
+  const text = document.getElementById('dashboardContent').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utter);
+}
+
+function startVoiceInput() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = document.getElementById('langSelect').value;
+  recognition.start();
+  recognition.onresult = function(event) {
+    alert('You said: ' + event.results[0][0].transcript);
+  };
+}
+</script>
+</body>
+</html>

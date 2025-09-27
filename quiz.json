@@ -1,0 +1,17 @@
+[
+  {"question":"Which subject do you like the most?","options":["Math","Science","Arts","Commerce"],"answer":"Math"},
+  {"question":"Do you prefer indoor or outdoor activities?","options":["Indoor","Outdoor"],"answer":"Indoor"},
+  {"question":"Do you enjoy coding?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Are you interested in agriculture?","options":["Yes","No"],"answer":"No"},
+  {"question":"Do you like working with children?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Do you enjoy teaching?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Are you comfortable in leadership roles?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Do you like solving puzzles?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Do you prefer research-oriented work?","options":["Yes","No"],"answer":"No"},
+  {"question":"Do you enjoy public speaking?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Are you interested in IT and technology?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Do you like creative arts?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Do you enjoy field work?","options":["Yes","No"],"answer":"No"},
+  {"question":"Do you like writing and communication?","options":["Yes","No"],"answer":"Yes"},
+  {"question":"Are you good at numerical problem-solving?","options":["Yes","No"],"answer":"Yes"}
+]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Updates - ShikshaSetu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="updates-container">
+  <h2>Updates</h2>
+  <input type="text" id="searchUpdate" placeholder="Search updates...">
+
+  <!-- Progress Tracker -->
+  <div class="progress-tracker">
+    <progress id="updateProgress" value="30" max="100"></progress>
+    <span id="updatePercent">30%</span>
+    <button onclick="downloadUpdatesPDF()">Download Updates PDF</button>
+  </div>
+
+  <!-- TTS/STT Buttons -->
+  <button onclick="readUpdates()">🔊 Read Updates</button>
+  <button onclick="startUpdatesVoiceInput()">🎤 Speak</button>
+
+  <div id="updatesList"></div>
+</div>
+
+<script src="js/updates.js"></script>
+<script src="js/html2pdf.bundle.min.js"></script>
+<script>
+function downloadUpdatesPDF() {
+  const element = document.querySelector('.updates-container');
+  html2pdf().from(element).save('Updates.pdf');
+}
+
+function readUpdates() {
+  const text = document.getElementById('updatesList').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utter);
+}
+
+function startUpdatesVoiceInput() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = 'en-US'; // or dynamically from dropdown if added
+  recognition.start();
+  recognition.onresult = function(event) {
+    alert('You said: ' + event.results[0][0].transcript);
+  };
+}
+</script>
+</body>
+</html>

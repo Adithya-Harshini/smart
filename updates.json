@@ -1,0 +1,17 @@
+[
+  {"title":"Exam Dates Released","description":"State board exam dates announced.","date":"2025-09-16"},
+  {"title":"New College Added","description":"ABC College listed under your district.","date":"2025-09-15"},
+  {"title":"Scholarship Available","description":"Government scholarship for students.","date":"2025-09-14"},
+  {"title":"Workshop","description":"Free online workshop on coding.","date":"2025-09-13"},
+  {"title":"Sports Event","description":"Annual sports meet scheduled.","date":"2025-09-12"},
+  {"title":"Holiday Notice","description":"Public holiday on Friday.","date":"2025-09-11"},
+  {"title":"Career Fair","description":"Local career fair coming up.","date":"2025-09-10"},
+  {"title":"New Courses","description":"Vocational courses added.","date":"2025-09-09"},
+  {"title":"Webinar","description":"Online webinar for teachers.","date":"2025-09-08"},
+  {"title":"Result Declared","description":"Class 10 results announced.","date":"2025-09-07"},
+  {"title":"Library Update","description":"New books available.","date":"2025-09-06"},
+  {"title":"Transport Info","description":"Bus schedule updated.","date":"2025-09-05"},
+  {"title":"Online Classes","description":"Classes moved online.","date":"2025-09-04"},
+  {"title":"Cultural Event","description":"School cultural festival.","date":"2025-09-03"},
+  {"title":"Feedback","description":"Student feedback survey.","date":"2025-09-02"}
+]

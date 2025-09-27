@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News - ShikshaSetu</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="news-container">
+  <h2>News</h2>
+  <input type="text" id="searchNews" placeholder="Search news...">
+
+  <!-- Progress Tracker -->
+  <div class="progress-tracker">
+    <progress id="newsProgress" value="25" max="100"></progress>
+    <span id="newsPercent">25%</span>
+    <button onclick="downloadNewsPDF()">Download News PDF</button>
+  </div>
+
+  <!-- TTS/STT Buttons -->
+  <button onclick="readNews()">🔊 Read News</button>
+  <button onclick="startNewsVoiceInput()">🎤 Speak</button>
+
+  <div id="newsList"></div>
+</div>
+
+<script src="js/news.js"></script>
+<script src="js/html2pdf.bundle.min.js"></script>
+<script>
+function downloadNewsPDF() {
+  const element = document.querySelector('.news-container');
+  html2pdf().from(element).save('News.pdf');
+}
+
+function readNews() {
+  const text = document.getElementById('newsList').innerText;
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utter);
+}
+
+function startNewsVoiceInput() {
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = 'en-US';
+  recognition.start();
+  recognition.onresult = function(event) {
+    alert('You said: ' + event.results[0][0].transcript);
+  };
+}
+</script>
+</body>
+</html>

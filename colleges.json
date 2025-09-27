@@ -1,0 +1,17 @@
+[
+  {"name":"ABC College","courses":["B.Sc","B.Com","B.A"],"location":"District A"},
+  {"name":"XYZ Institute","courses":["B.Tech","M.Tech"],"location":"District B"},
+  {"name":"Sunrise College","courses":["BBA","MBA"],"location":"District C"},
+  {"name":"Greenfield University","courses":["BCA","MCA"],"location":"District D"},
+  {"name":"Riverdale College","courses":["B.Sc","B.Ed"],"location":"District E"},
+  {"name":"BlueSky Institute","courses":["Diploma in IT","Diploma in Management"],"location":"District F"},
+  {"name":"Horizon College","courses":["B.Sc Agriculture","B.Sc Horticulture"],"location":"District G"},
+  {"name":"Maple University","courses":["BA","MA"],"location":"District H"},
+  {"name":"Pioneer College","courses":["B.Tech","M.Tech","PhD"],"location":"District I"},
+  {"name":"Evergreen Institute","courses":["B.Sc Nursing","M.Sc Nursing"],"location":"District J"},
+  {"name":"Liberty College","courses":["B.Com","M.Com"],"location":"District K"},
+  {"name":"Crescent College","courses":["B.Ed","M.Ed"],"location":"District L"},
+  {"name":"Orchid University","courses":["BCA","B.Sc IT"],"location":"District M"},
+  {"name":"Starlight Institute","courses":["Diploma in Arts","Diploma in Science"],"location":"District N"},
+  {"name":"BrightFuture College","courses":["BBA","MBA","PGDM"],"location":"District O"}
+]
