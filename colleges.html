@@ -19,14 +19,14 @@
   </div>
 
   <!-- TTS/STT Buttons -->
-  <button onclick="readColleges()">🔊 Read Colleges</button>
-  <button onclick="startCollegesVoiceInput()">🎤 Speak</button>
+  <button onclick="readColleges()"> Read Colleges</button>
+  <button onclick="startCollegesVoiceInput()"> Speak</button>
 
   <div id="collegeList"></div>
 </div>
 
-<script src="js/location.js"></script>
-<script src="js/html2pdf.bundle.min.js"></script>
+<script src="location.js"></script>
+<script src="html2pdf.bundle.min.js"></script>
 <script>
 function downloadCollegesPDF() {
   const element = document.querySelector('.college-container');
@@ -50,4 +50,5 @@ function startCollegesVoiceInput() {
 </script>
 </body>
 </html>
+
 
