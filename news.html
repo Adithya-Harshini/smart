@@ -19,14 +19,14 @@
   </div>
 
   <!-- TTS/STT Buttons -->
-  <button onclick="readNews()">🔊 Read News</button>
-  <button onclick="startNewsVoiceInput()">🎤 Speak</button>
+  <button onclick="readNews()"> Read News</button>
+  <button onclick="startNewsVoiceInput()"> Speak</button>
 
   <div id="newsList"></div>
 </div>
 
-<script src="js/news.js"></script>
-<script src="js/html2pdf.bundle.min.js"></script>
+<script src="news.js"></script>
+<script src="html2pdf.bundle.min.js"></script>
 <script>
 function downloadNewsPDF() {
   const element = document.querySelector('.news-container');
@@ -50,4 +50,5 @@ function startNewsVoiceInput() {
 </script>
 </body>
 </html>
+
 
