@@ -19,14 +19,14 @@
   </div>
 
   <!-- TTS/STT Buttons -->
-  <button onclick="readJobs()">🔊 Read Jobs</button>
-  <button onclick="startJobsVoiceInput()">🎤 Speak</button>
+  <button onclick="readJobs()"> Read Jobs</button>
+  <button onclick="startJobsVoiceInput()"> Speak</button>
 
   <div id="jobList"></div>
 </div>
 
-<script src="js/jobs.js"></script>
-<script src="js/html2pdf.bundle.min.js"></script>
+<script src="jobs.js"></script>
+<script src="html2pdf.bundle.min.js"></script>
 <script>
 function downloadJobsPDF() {
   const element = document.querySelector('.jobs-container');
@@ -50,4 +50,5 @@ function startJobsVoiceInput() {
 </script>
 </body>
 </html>
+
 
