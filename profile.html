@@ -26,12 +26,12 @@
   <button onclick="downloadProfilePDF()">Download Profile as PDF</button>
 
   <!-- TTS/STT -->
-  <button onclick="readProfileText()">🔊 Read Profile</button>
-  <button onclick="startProfileVoiceInput()">🎤 Speak</button>
+  <button onclick="readProfileText()"> Read Profile</button>
+  <button onclick="startProfileVoiceInput()"> Speak</button>
 </div>
 
-<script src="js/main.js"></script>
-<script src="js/html2pdf.bundle.min.js"></script>
+<script src="main.js"></script>
+<script src="html2pdf.bundle.min.js"></script>
 <script>
 function downloadProfilePDF() {
   const element = document.querySelector('.profile-container');
@@ -70,4 +70,5 @@ window.onload = function() {
 </script>
 </body>
 </html>
+
 
